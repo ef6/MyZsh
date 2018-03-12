@@ -1,12 +1,12 @@
 ## 终端切换成 zsh
-> `brew install zsh`
 
-> `chsh -s zsh`
-
-## 下载配置文件 
+```sh
+$ brew install zsh
+$ sudo sh -c "echo $(which zsh) >> /etc/shells"
+$ chsh -s $(which zsh)
 ```
-curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/zshrc -o .zshrc &&
-git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh &&
-git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions &&
-git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+
+## 安裝 Oh My ZSH 下载配置文件 
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/install.sh)"
 ```
