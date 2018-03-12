@@ -32,4 +32,6 @@ git_pull "$ZSH"
 git_pull "$ZSH/custom/plugins/zsh-autosuggestions"
 git_pull "$ZSH/custom/plugins/zsh-syntax-highlighting"
 git_pull "$ZSH/custom/themes/spaceship-prompt"
-curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/zshrc -o ~/.zshrc
+if [ "$DISABLE_AUTO_UPDATE_ZSHRC" != "true" ]; then
+  curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/zshrc -o ~/.zshrc
+fi

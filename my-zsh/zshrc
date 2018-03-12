@@ -30,6 +30,9 @@ SPACESHIP_GIT_SYMBOL="${SPACESHIP_GIT_SYMBOL=""}"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
+
+
+# DISABLE_AUTO_UPDATE_ZSHRC="true"
 # If you do not want to upgrade, please note the following line.
 source $ZSH/custom/check_for_upgrade.sh
 
