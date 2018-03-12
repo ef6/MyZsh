@@ -10,3 +10,7 @@ $ chsh -s $(which zsh)
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/install.sh)"
 ```
+termux 用这个
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/install_in_termux.sh)"
+```
