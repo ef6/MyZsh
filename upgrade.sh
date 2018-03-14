@@ -32,7 +32,9 @@ git_pull "$ZSH"
 git_pull "$ZSH/custom/plugins/zsh-autosuggestions"
 git_pull "$ZSH/custom/plugins/zsh-syntax-highlighting"
 git_pull "$ZSH/custom/themes/spaceship-prompt"
-if [ "$ENABLE_AUTO_UPDATE_ZSHRC" = "true" ]; then
+
+if [ "$ENABLE_AUTO_UPDATE_ZSHRC" = "true" ]
+then
   git_pull "$ZSH/custom/MyZsh"
   cp $ZSH/custom/MyZsh/.zshrc ~/.zshrc
 fi
