@@ -8,9 +8,9 @@ $ chsh -s $(which zsh)
 
 ## 安裝 Oh My ZSH 下载配置文件 
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/MyZsh/master/install.sh)"
 ```
 termux 用这个
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/install_in_termux.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ef6/MyZsh/master/install_in_termux.sh)"
 ```

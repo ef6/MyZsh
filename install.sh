@@ -73,24 +73,17 @@ main() {
     mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
   fi
 
-  printf "${BLUE}Using ef6's Oh My Zsh template file and adding it to ~/.zshrc${NORMAL}\n"
-  curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/zshrc -o ~/.zshrc || {
-    printf "${RED}%s${NORMAL}\n" "Error: curl ef6's zshrc failed\n"
-    printf "${BLUE}Using the Oh My Zsh template file and adding it to ~/.zshrc${NORMAL}\n"
-    cp $ZSH/templates/zshrc.zsh-template ~/.zshrc
+  env git clone --depth=1 https://github.com/ef6/MyZsh.git $ZSH/custom/MyZsh || {
+    printf "${RED}%s${NORMAL}\n" "Error: git clone of ef6/MyZsh repo failed\n"
+    exit 1
   }
+  printf "${BLUE}Using ef6's Oh My Zsh template file and adding it to ~/.zshrc${NORMAL}\n"
+  cp $ZSH/custom/MyZsh/.zshrc ~/.zshrc
+
   sed "/^export ZSH=/ c\\
   export ZSH=$ZSH
   " ~/.zshrc > ~/.zshrc-omztemp
   mv -f ~/.zshrc-omztemp ~/.zshrc
-
- printf "${BLUE}Using ef6's Oh My Zsh auto-update checks${NORMAL}\n"
-  curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/check_for_upgrade.sh -o $ZSH/custom/check_for_upgrade.sh || {
-    printf "${RED}%s${NORMAL}\n" "Error: curl ef6's check_for_upgrade.sh failed\n"
-  }
-  curl -fsSL https://raw.githubusercontent.com/ef6/config/master/my-zsh/upgrade.sh -o $ZSH/custom/upgrade.sh || {
-    printf "${RED}%s${NORMAL}\n" "Error: curl ef6's upgrade.sh failed\n"
-  }
 
   printf "${BLUE}Cloning Plugins...${NORMAL}\n"
   env git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/custom/plugins/zsh-autosuggestions || {

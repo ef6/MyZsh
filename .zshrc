@@ -32,9 +32,9 @@ SPACESHIP_GIT_SYMBOL="${SPACESHIP_GIT_SYMBOL=""}"
 DISABLE_AUTO_UPDATE="true"
 
 
-# DISABLE_AUTO_UPDATE_ZSHRC="true"
+ENABLE_AUTO_UPDATE_ZSHRC="true"
 # If you do not want to upgrade, please note the following line.
-source $ZSH/custom/check_for_upgrade.sh
+source $ZSH/custom/MyZsh/check_for_upgrade.sh
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -107,3 +107,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias xattr@="find . -exec xattr -c {} \;"
